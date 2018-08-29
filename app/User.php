@@ -5,9 +5,12 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+
+
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, EntrustUserTrait; //Configuro EntrustUserTrait en el modelo usuario para que ejecuten y se relecione los metodos del entrust
 
     /**
      * The attributes that are mass assignable.
